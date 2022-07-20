@@ -11,20 +11,30 @@ export class AppComponent {
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
   answer = "";
+  genders = [ "male", "female" ];
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    this.signupForm.setValue({
+      userData: {
+        username: suggestedName,
+        email: ''
+      },
+      secret: 'pet',
+      questionAnswer: '',
+      gender: 'male'
+    })
   }
 
   onSubmit(
     // form:   HTMLFormElement, 
-    ngForm: NgForm
+    // ngForm: NgForm
   ){
     // console.log(form);
     // console.log("SUBMITTED MY GUY")
-    // console.log("<=========================================================>");
-    console.log();
-    console.log(ngForm);
+    // console.log("<=========================================================>");    
+    // console.log(ngForm);
+    console.log(this.signupForm);
 
   };
 
