@@ -84,6 +84,19 @@
           [disabled]="!f.valid"
         >Submit</button>
       </form>
+      <hr>
+      <h3>Your Data</h3>
+    </div>
+  </div>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <!-- the user.<VALUE> will be whatever you named inside onSubmit() -->
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Secret Question: Your first {{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
     </div>
   </div>
 </div>
